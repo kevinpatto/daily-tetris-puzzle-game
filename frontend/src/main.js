@@ -4,6 +4,11 @@ import javascriptLogo from './assets/javascript.svg'
 import viteLogo from './assets/vite.svg'
 import { setupCounter } from './counter.js'
 
+document.querySelector('#app')?.insertAdjacentHTML(
+  'beforeend',
+  '<p>Vite is connected to Django.</p>'
+)
+
 document.querySelector('#app').innerHTML = `
 <section id="center">
   <div class="hero">
