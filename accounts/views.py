@@ -5,8 +5,8 @@ from .models import UserProfile
 from django.shortcuts import get_object_or_404, render
 
 def get_user_profile(request, username):
-    user = get_object_or_404(UserProfile, username=username)
-    return render(request, 'profiles/profile.html', {"user":user})
+    profile = get_object_or_404(UserProfile, user__username=username)
+    return render(request, 'profiles/profile.html', {"profile":profile})
 
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
