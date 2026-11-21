@@ -3,5 +3,9 @@
 {% block title %} {{ profile.user.username }} {% endblock %}
 
 {% block content %}
-    <p>This is {{ profile.user.username }}'s profile</p>
+    {% if user.is_authenticated and profile.user.username == user.username %}
+        <p>This is your profile, {{ profile.user.username }}!</p>
+    {% else %}
+        <p>This is {{ profile.user.username }}'s profile</p>
+    {% endif %}
 {% endblock %}
