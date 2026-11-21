@@ -16,16 +16,12 @@
 <header class="site-header">
     <div class="header-inner">
         <a class="brand" href="/" aria-label="Daily Tetris Puzzle Game">
-            {% if user.is_authenticated %}
-                {{ user.username }}
-            {% else %}
-                Daily Tetris Puzzle Game
-            {% endif %}
+            Daily Tetris Puzzle Game
         </a>
 
         <nav class="header-nav" aria-label="Main navigation">
             {% if user.is_authenticated %}
-                 <a href="{% url "profile" %}">Profile</a>
+                 <a href="{% url "profile" %}">{{ user.username }}</a>
             {% endif %}
         </nav>
 
