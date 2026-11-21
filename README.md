@@ -1,5 +1,5 @@
 # Daily Game, by Kevin Patto
 
-## Development branch
+## Frontend implementation branch
 
-This is the development branch. This is where large changes are staged for merging to the main branch.
+This branch is for implementing the general frontend structure of the website. This branch will be closed when a sufficient version is produced, and will be branched from when relatively significant features need to be implemented.
