@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A daily Tetris puzzle game by Kevin Patto."/>
-    <title>Daily Tetris Puzzle Game: {% block title %}{% endblock %}</title>
+    <title>Tetris Puzzdle - {% block title %}{% endblock %}</title>
     {% load django_vite %}
     {% vite_hmr_client %}
     {% vite_asset 'src/main.js' %}
@@ -15,8 +15,8 @@
 <body>
 <header class="site-header">
     <div class="header-inner">
-        <a class="brand" href="/" aria-label="Daily Tetris Puzzle Game">
-            Daily Tetris Puzzle Game
+        <a class="brand" href="/" aria-label="Tetris Puzzdle">
+            Tetris Puzzdle
         </a>
 
         <nav class="header-nav" aria-label="Main navigation">
