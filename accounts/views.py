@@ -4,9 +4,14 @@ from accounts.forms import CustomUserCreationForm
 from .models import UserProfile
 from django.shortcuts import get_object_or_404, render
 
+
 def get_user_profile(request, username):
-    profile = get_object_or_404(UserProfile, user__username=username)
-    return render(request, 'profiles/profile.html', {"profile":profile})
+    profile = (UserProfile.objects.select_related("user").filter(user__username=username).first())
+    if profile is None:
+        return render(request, "profiles/profile.html", {"profile": None, "invalidUsername": username}, status=404)
+    else:
+        return render(request, 'profiles/profile.html', {"profile": profile})
+
 
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
