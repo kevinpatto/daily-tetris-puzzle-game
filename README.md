@@ -1,5 +1,5 @@
 # Daily Game, by Kevin Patto
 
-## Development branch
+## Frontend Page Design
 
-This is the development branch. This is where large changes are staged for merging to the main branch.
+This branch will contain additions and changes to the overall webpage design, including style (.css) changes, template additions, etc. in an attempt to get the project closer to its final frontend design.
