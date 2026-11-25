@@ -28,7 +28,7 @@ def find_leaderboard(request, date):
 
     ## check if puzzle with URL's date exists
     puzzle_exists = DailyPuzzle.objects.filter(date=puzzle_date).exists()
-    ## sends info for page to handle if that URL's date does not exist
+    ## 404 if URl's date is valid, but no leaderboard for that day
     if not puzzle_exists:
         return render(
             request,
@@ -51,7 +51,6 @@ def find_leaderboard(request, date):
         "leaderboard.html",
         {
             "leaderboard": leaderboard,
-            "is_leaderboard": True,
             "date": date,
         },
     )
