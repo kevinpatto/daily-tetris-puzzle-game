@@ -6,11 +6,11 @@ This is a website for a daily game in which players are given a unique start in 
 
 ## Technologies Used
 
-Django, bcrypt
+Django, bcrypt, django-vite
 
 ## Prerequisites
 
-Django 6.1.2
+Django 6.1.3, npm
 
 ## Installation
 
@@ -27,7 +27,7 @@ To create an admin user, type ```py manage.py createsuperuser```. Ensure passwor
 
 ## Running the application
 
-Type ```py manage.py runserver``` while in the project's directory in your CLI.
+Type ```py manage.py runserver``` while in the project's directory in your CLI. Open an additional CLI in project directory, navigate to ```./frontend```. Run command ```npm run dev``` to launch frontend. Style and assets will take a second to load on pages sometimes, that is to be expected.
 
 ## Known limitations
 
