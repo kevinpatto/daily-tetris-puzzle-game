@@ -3,7 +3,7 @@
 
 <!-- title set to leaderboard's date, or "Invalid Leaderboard" if URL is invalid -->
 {% block title %}
-    {% if leaderboard.is_leaderboard %}
+    {% if leaderboard.valid_input %}
         {{ leaderboard.date }}
     {% else %}
         Invalid Leaderboard

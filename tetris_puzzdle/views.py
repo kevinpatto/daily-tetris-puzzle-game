@@ -22,7 +22,7 @@ def find_leaderboard(request, date):
         return render(
             request,
             "leaderboard.html",
-            {"leaderboard": None, "is_leaderboard": False},
+            {"leaderboard": None, "valid_input": False},
             status=404,
         )
 
@@ -33,7 +33,7 @@ def find_leaderboard(request, date):
         return render(
             request,
             "leaderboard.html",
-            {"leaderboard": None, "is_leaderboard": True, "date": date},
+            {"leaderboard": None, "valid_input": True, "date": date},
             status=404,
         )
 
