@@ -1,13 +1,14 @@
 from django.conf import settings
 from django.db import models
-# most of this is AI generated, i added in a few notes denoted by "##" as comment starter
+# most of this file was AI generated using duck.ai with model GPT-6 Luna
+## from here on out,  i added in comments, denoted by "##", to explain what is happening (for myself mostly)
 
 ## model for daily puzzles.
 class DailyPuzzle(models.Model):
-    date = models.DateField(unique=True)
-    starting_board = models.JSONField(default=list)
-    piece_sequence = models.JSONField(default=list)
-    created_at = models.DateTimeField(auto_now_add=True)
+    date = models.DateField(unique=True) ## unique date of puzzle, every day can only have one puzzle
+    starting_board = models.JSONField(default=list) ## setup of puzzle as JSON
+    piece_sequence = models.JSONField(default=list) ## piece sequence as JSON
+    created_at = models.DateTimeField(auto_now_add=True) ## time puzzle was created
 
     class Meta:
         ordering = ["-date"]
