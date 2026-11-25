@@ -20,6 +20,11 @@
         </a>
 
         <nav class="header-nav" aria-label="Main navigation">
+            {% now "Y-m-d" as today %}
+            <a href="{% url 'leaderboard' date=today %}">
+                Today's leaderboard
+            </a>
+
             {% if user.is_authenticated %}
                  <a href="{% url "profile" username=user.username %}">{{ user.username }}</a>
             {% endif %}
