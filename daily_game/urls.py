@@ -25,6 +25,6 @@ urlpatterns = [
     path("accounts/", include("accounts.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
     path("profile/<str:username>/", get_user_profile, name="profile"),
-    path("leaderboard/<str:leaderboard>", find_leaderboard, name="leaderboard"),
+    path("leaderboard/<str:date>", find_leaderboard, name="leaderboard"),
     path("", TemplateView.as_view(template_name="home.html"), name="home"),
 ]
