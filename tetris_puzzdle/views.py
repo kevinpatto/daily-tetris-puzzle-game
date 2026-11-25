@@ -57,6 +57,7 @@ def find_leaderboard(request, date):
 
 
 ## get_leaderboard works as an API call for vite
+## format:  /api/leaderboard/<date>/?first_attempt=(0,1)&day_of=(0,1)&mode=(best,all)
 ## essentially, this will get called anytime after a user changes a filter. django handles the sorting and filtering, vite handles the rendering
 @require_GET
 def get_leaderboard(request, date, ):
