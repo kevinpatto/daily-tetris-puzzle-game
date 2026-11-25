@@ -3,13 +3,19 @@
 
 <!-- title set to leaderboard's date, or "Invalid Leaderboard" if URL is invalid -->
 {% block title %}
-    {% if leaderboard.valid_input %}
-        {{ leaderboard.date }}
+    {% if valid_input %}
+        {{ date }}
     {% else %}
         Invalid Leaderboard
     {% endif %}
 {% endblock %}
 
 {% block content %}
-
+    {% if leaderboard %}
+        <h1>Leaderboard for {{ leaderboard.date }}</h1>
+    {% elif valid_input %}
+        <h1>No leaderboard for {{ date }}</h1>
+    {% else %}
+        <h1>Date entered incorrectly. Use YYYY-MM-DD format.</h1>
+    {% endif %}
 {% endblock %}
