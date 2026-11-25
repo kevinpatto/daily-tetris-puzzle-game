@@ -13,4 +13,14 @@
             <a class="button" href="{% url "profile" username="alex" %}">alex</a>
         </li>
     </ul>
+    <br />
+    <h2>Featured Leaderboards:</h2>
+    <ul>
+        <li>
+            <a class="button" href="{% url "leaderboard" date="2026-11-24" %}">Leaderboard for 2026-11-24</a>
+        </li>
+        <li>
+            <a class="button" href="{% url "leaderboard" date="2026-11-23" %}">Leaderboard for 2026-11-23</a>
+        </li>
+    </ul>
 {% endblock %}
