@@ -51,6 +51,7 @@ def find_leaderboard(request, date):
         "leaderboard.html",
         {
             "leaderboard": leaderboard,
+            "valid_input": True,
             "date": date,
         },
     )
