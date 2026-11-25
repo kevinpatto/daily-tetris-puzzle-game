@@ -1,5 +1,5 @@
 # Daily Game, by Kevin Patto
 
-## Model Design Branch
+## Development branch
 
-This is the branch for model design. This branch will have hopefully all models needed and functions for use directly by Django as a frontend, or vite as an API call
+This is the development branch. This is where large changes are staged for merging to the main branch.
