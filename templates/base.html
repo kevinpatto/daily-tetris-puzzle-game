@@ -4,14 +4,52 @@
 
 <head>
     <meta charset="utf-8">
-    <title>{% block title %}Django Auth Tutorial{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A daily Tetris puzzle game by Kevin Patto."/>
+    <title>Tetris Puzzdle - {% block title %}{% endblock %}</title>
+    {% load django_vite %}
+    {% vite_hmr_client %}
+    {% vite_asset 'src/main.js' %}
 </head>
 
 <body>
-<main>
+<header class="site-header">
+    <div class="header-inner">
+        <a class="brand" href="/" aria-label="Tetris Puzzdle">
+            Tetris Puzzdle
+        </a>
+
+        <nav class="header-nav" aria-label="Main navigation">
+            {% if user.is_authenticated %}
+                 <a href="{% url "profile" username=user.username %}">{{ user.username }}</a>
+            {% endif %}
+        </nav>
+
+        <div class="header-actions">
+            <button class="button" type="button" data-theme-toggle aria-label="Toggle color theme">
+                Theme
+            </button>
+            {% if user.is_authenticated %}
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button class="button button-primary" type="submit">
+                        Log Out
+                    </button>
+                </form>
+            {% else %}
+                <a class="button button-primary" href="{% url 'login' %}">
+                    Log in
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</header>
+
+<main class="page-content">
     {% block content %}
     {% endblock %}
 </main>
+
 </body>
 
 </html>

@@ -17,10 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic.base import TemplateView
+from accounts.views import get_user_profile
+from tetris_puzzdle.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("accounts/", include("accounts.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
+    path("profile/<str:username>/", get_user_profile, name="profile"),
+    path("leaderboard/<str:date>", find_leaderboard, name="leaderboard"),
     path("", TemplateView.as_view(template_name="home.html"), name="home"),
 ]

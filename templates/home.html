@@ -1,17 +1,26 @@
+<!-- templates/home.html -->
 {% extends "base.html" %}
 
 {% block title %}Home{% endblock %}
 
 {% block content %}
-    {% if user.is_authenticated %}
-        <p>Hi {{ user.username }}!</p>
-        <p><a href="{% url "profile" %}">Visit your profile</a></p>
-        <form action="{% url 'logout' %}" method="post">
-            {% csrf_token %}
-            <button type="submit">Log Out</button>
-        </form>
-    {% else %}
-        <p>You are not logged in</p>
-        <a href="{% url 'login' %}">Log In</a>
-    {% endif %}
+    <h2>Featured Users:</h2>
+    <ul>
+        <li>
+            <a class="button" href="{% url "profile" username="john" %}">john</a>
+        </li>
+        <li>
+            <a class="button" href="{% url "profile" username="alex" %}">alex</a>
+        </li>
+    </ul>
+    <br />
+    <h2>Featured Leaderboards:</h2>
+    <ul>
+        <li>
+            <a class="button" href="{% url "leaderboard" date="2026-11-24" %}">Leaderboard for 2026-11-24</a>
+        </li>
+        <li>
+            <a class="button" href="{% url "leaderboard" date="2026-11-23" %}">Leaderboard for 2026-11-23</a>
+        </li>
+    </ul>
 {% endblock %}

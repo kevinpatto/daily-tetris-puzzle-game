@@ -35,8 +35,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'website.apps.WebsiteConfig',
+    'tetris_puzzdle.apps.WebsiteConfig',
     'accounts',
+    'django_vite',
 ]
 
 MIDDLEWARE = [
@@ -134,6 +135,14 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+DJANGO_VITE = {
+    "default": {
+        "dev_mode": DEBUG,
+        "dev_server_host": "localhost",
+        "dev_server_port": 5173,
+    }
+}
 
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
