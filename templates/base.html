@@ -22,7 +22,7 @@
         <nav class="header-nav" aria-label="Main navigation">
             {% now "Y-m-d" as today %}
             <a href="{% url 'leaderboard' date=today %}">
-                Today's leaderboard
+                Today's Leaderboard
             </a>
 
             {% if user.is_authenticated %}
